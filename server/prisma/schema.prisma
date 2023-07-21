@@ -1,0 +1,47 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model division {
+  id             Int        @id @default(autoincrement())
+  name           String?    @unique(map: "division_u_ind") @db.VarChar(200)
+  parent_id      Int?
+  division       division?  @relation("divisionTodivision", fields: [parent_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+  other_division division[] @relation("divisionTodivision")
+  users          users[]
+}
+
+model roles {
+  id    Int     @id @default(autoincrement())
+  name  String  @unique(map: "roles_names_u_ind") @db.VarChar(25)
+  users users[]
+}
+
+model tokens {
+  id            Int    @id @default(autoincrement())
+  refresh_token String @db.VarChar(500)
+  user_id       Int
+  users         users  @relation(fields: [user_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model users {
+  id           Int       @id @default(autoincrement())
+  email        String    @unique(map: "users_email_u_ind") @db.VarChar(50)
+  first_name   String?   @db.VarChar(30)
+  last_name    String?   @db.VarChar(30)
+  patronymic   String?   @db.VarChar(30)
+  begin_date   DateTime  @db.Timestamp(6)
+  end_date     DateTime? @db.Timestamp(6)
+  password     String?   @db.VarChar(255)
+  restore_link String?   @db.Uuid
+  restore_time DateTime? @db.Timestamp(6)
+  division_id  Int
+  tokens       tokens[]
+  division     division  @relation(fields: [division_id], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "users_division_fk")
+  roles        roles[]
+}
