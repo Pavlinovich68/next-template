@@ -11,7 +11,6 @@ import AppTopbar from './AppTopbar';
 import { LayoutContext } from './context/layoutcontext';
 import PrimeReact from 'primereact/api';
 import { ChildContainerProps, LayoutState, AppTopbarRef } from '../types/types';
-import LoginPage from "../pages/auth/login";
 import {$app_variables} from "../app.variables";
 
 const Layout = ({ children }: ChildContainerProps) => {

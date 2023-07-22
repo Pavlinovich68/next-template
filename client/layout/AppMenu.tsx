@@ -12,32 +12,52 @@ const AppMenu = () => {
 
     const model: AppMenuItem[] = [
         {
+            label: 'Обзор',
+            items: [{ label: 'Домашняя страница', icon: 'pi pi-fw pi-home', to: '/' }]
+        },
+        {
+            label: 'Иерархия меню',
             items: [
-                { label: 'Домой', icon: 'pi pi-fw pi-home', to: '/' },
                 {
-                    label: 'Администрирование',
-                    icon: 'pi pi-fw pi-cog',
+                    label: 'Подменю 1',
+                    icon: 'pi pi-fw pi-bookmark',
                     items: [
                         {
-                            label: 'Пользователи',
-                            icon: 'pi pi-fw pi-id-card',
-                            to: '/uikit/formlayout',
+                            label: 'Подменю 1.1',
+                            icon: 'pi pi-fw pi-bookmark',
+                            items: [
+                                { label: 'Подменю 1.1.1', icon: 'pi pi-fw pi-bookmark' },
+                                { label: 'Подменю 1.1.2', icon: 'pi pi-fw pi-bookmark' },
+                                { label: 'Подменю 1.1.3', icon: 'pi pi-fw pi-bookmark' }
+                            ]
+                        },
+                        {
+                            label: 'Подменю 1.2',
+                            icon: 'pi pi-fw pi-bookmark',
+                            items: [{ label: 'Подменю 1.2.1', icon: 'pi pi-fw pi-bookmark' }]
                         }
                     ]
                 },
                 {
-                    label: 'Справочники',
-                    icon: 'pi pi-fw pi-book',
+                    label: 'Подменю 2',
+                    icon: 'pi pi-fw pi-bookmark',
                     items: [
                         {
-                            label: 'Муниципальные образования',
-                            icon: 'pi pi-fw pi-building',
-                            to: '/uikit/formlayout',
+                            label: 'Подменю 2.1',
+                            icon: 'pi pi-fw pi-bookmark',
+                            items: [
+                                { label: 'Подменю 2.1.1', icon: 'pi pi-fw pi-bookmark' },
+                                { label: 'Подменю 2.1.2', icon: 'pi pi-fw pi-bookmark' }
+                            ]
+                        },
+                        {
+                            label: 'Подменю 2.2',
+                            icon: 'pi pi-fw pi-bookmark',
+                            items: [{ label: 'Подменю 2.2.1', icon: 'pi pi-fw pi-bookmark' }]
                         }
                     ]
                 }
             ]
-
         }
     ];
 
