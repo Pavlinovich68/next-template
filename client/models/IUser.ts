@@ -10,5 +10,5 @@ export interface IUser {
     patronymic: string,
     begin_date: Date,
     end_date: Date
-    roles: [];
+    roles: any[];
 }
