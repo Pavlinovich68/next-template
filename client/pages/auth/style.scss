@@ -24,9 +24,10 @@
 }
 
 .itr-h1 {
+    color: #20262E;
     font-weight: bold;
     font-stretch: condensed;
-    margin: 0;
+    margin: 0 0 1rem;
     font-size: 2rem;
 }
 
@@ -68,8 +69,8 @@
 
 .itr-rest-top{
     height: 45%;
-    background: #074064;
-    background: linear-gradient(to right, #074064, #052b42) no-repeat 0 0 / cover;
+    background: #2A323D;
+    background: linear-gradient(to right, #2A323D, #3B404B) no-repeat 0 0 / cover;
     color: #fff;
     position: relative;
     padding-top: 15px;
@@ -78,7 +79,7 @@
 .itr-rest-bottom{
     bottom: -27px;
     height: 10%;
-    background: linear-gradient(to right, #074064, #052b42) no-repeat 0 0 / cover;
+    background: linear-gradient(to right, #2A323D, #3B404B) no-repeat 0 0 / cover;
     color: #fff;
     position: relative;
     padding-top: 15px;
@@ -86,7 +87,7 @@
 
 .itr-form-container form {
     background: #fff;
-    color: #084165;
+    color: #2A323D;
     display: flex;
     flex-direction: column;
     padding:  0 50px;
@@ -97,12 +98,30 @@
 }
 
 .itr-form-container input {
-    background: #eee;
-    border: none;
     padding: 12px 15px;
     margin: 8px 0;
     width: 100%;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+    border-style: inset;
+    border-width: 2px;
+    border-color: rgb(118, 118, 118);
+    border-image: initial;
+    -webkit-text-fill-color: #F3FFF3;
+    color: #F3FFF3;
+    -webkit-box-shadow: 0 0 0px 1000px #3B3B3B inset;
+    transition: background-color 5000s ease-in-out 0s;
+}
+
 
 .itr-rest-input{
     padding: 25px 15px 0;
@@ -118,12 +137,13 @@
 
 .itr-button {
     border-radius: 20px;
-    border: 1px solid #074064;
-    background: #052b42;
+    border: 1px solid #2A323D;
+    background: #3B404B;
     color: #fff;
     font-size: 12px;
     font-weight: bold;
     padding: 12px 45px;
+    margin-top: 2rem;
     letter-spacing: 1px;
     text-transform: uppercase;
     transition: transform 80ms ease-in;
@@ -178,8 +198,8 @@
 }
 
 .itr-overlay {
-    background: #074064;
-    background: linear-gradient(to right, #074064, #052b42) no-repeat 0 0 / cover;
+    background: #2A323D;
+    background: linear-gradient(to right, #2A323D, #3B404B) no-repeat 0 0 / cover;
     color: #fff;
     position: relative;
     left: -100%;

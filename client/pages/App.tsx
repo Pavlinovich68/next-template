@@ -36,7 +36,7 @@ const App: FC = ({ Component, pageProps })  => {
         }
     }
 
-    return (<div>{start()}</div>)
+    return (start())
 }
 
 export default observer(App);
